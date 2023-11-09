@@ -1,0 +1,48 @@
+{
+    "MaskExpressions": [
+        {
+            "name": "Mask1",
+            "description": "Mask for sensitive data",
+            "expression": "case when..."
+        },
+        {
+            "name": "Mask2",
+            "description": "Mask for personal data",
+            "expression": "case when..."
+        }
+    ],
+    "Roles": [
+        {
+            "name": "Role1",
+            "description": "Role for analysts"
+        },
+        {
+            "name": "Role2",
+            "description": "Role for managers"
+        }
+    ],
+    "RoleMappings": [
+        {
+            "RoleName": "Role1",
+            "MaskExpressionName": "Mask1",
+            "catalog": "catalog1",
+            "schema": "schema1",
+            "table": "table1",
+            "columns": [
+                "column1",
+                "column2"
+            ]
+        },
+        {
+            "RoleName": "Role2",
+            "MaskExpressionName": "Mask2",
+            "catalog": "catalog2",
+            "schema": "schema2",
+            "table": "table2",
+            "columns": [
+                "column3",
+                "column4"
+            ]
+        }
+    ]
+}

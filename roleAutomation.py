@@ -1,60 +1,76 @@
+import json
 import requests
 
-# Define variables
-config = {
-    "role_name": "autorole1",
-    "column_mask_name": "testcolumnmask1",
-    "catalog": "tpch",
-    "schema": "tiny",
-    "table": "customer",
-    "columns": ["nationkey"],
-    "base_url": "https://sep.saipov.az.starburstdata.net/api/v1/biac",
-    "auth_header": {
-        "Accept": "application/json",
-        "Content-Type": "application/json",
-        "X-Trino-Role": "system=ROLE{sysadmin}",
-        "Authorization": "Basic YWRtaW46U3RhcmJ1cnN0UjBja3Mh"
-    }
+def check_if_exists(name, base_url, auth_header, entity_type):
+    """Check if the entity exists on the server."""
+    # Placeholder for the logic to check if an entity exists
+    # The implementation will depend on the server's API
+    return False
+
+def delete_entity(name, base_url, auth_header, entity_type):
+    """Delete the entity from the server."""
+    # Placeholder for the logic to delete an entity
+    # The implementation will depend on the server's API
+    pass
+
+def create_mask_expression(mask, base_url, auth_header, overwrite=False):
+    """Create a mask expression on the server with an option to overwrite."""
+    if overwrite or not check_if_exists(mask['name'], base_url, auth_header, 'mask'):
+        if overwrite:
+            delete_entity(mask['name'], base_url, auth_header, 'mask')
+        # Placeholder for the HTTP POST request to create a new mask expression
+        url = f"{base_url}/create_mask_expression"
+        response = requests.post(url, headers=auth_header, json=mask)
+        return response.json()
+    else:
+        return {'message': 'Mask expression already exists and overwrite is False.'}
+
+def create_role(role, base_url, auth_header, overwrite=False):
+    """Create a role on the server with an option to overwrite."""
+    if overwrite or not check_if_exists(role['name'], base_url, auth_header, 'role'):
+        if overwrite:
+            delete_entity(role['name'], base_url, auth_header, 'role')
+        # Placeholder for the HTTP POST request to create a new role
+        url = f"{base_url}/create_role"
+        response = requests.post(url, headers=auth_header, json=role)
+        return response.json()
+    else:
+        return {'message': 'Role already exists and overwrite is False.'}
+
+def map_role_to_mask(mapping, base_url, auth_header, overwrite=False):
+    """Map a role to a mask expression with an option to overwrite."""
+    # Assuming a combined check for both role and mask expression existence
+    if overwrite or not check_if_exists(mapping['RoleName'], base_url, auth_header, 'role_mapping'):
+        if overwrite:
+            # Assuming the API can delete a role mapping directly
+            delete_entity(mapping['RoleName'], base_url, auth_header, 'role_mapping')
+        # Placeholder for the HTTP POST request to map the role to the mask
+        url = f"{base_url}/map_role_to_mask"
+        response = requests.post(url, headers=auth_header, json=mapping)
+        return response.json()
+    else:
+        return {'message': 'Role mapping already exists and overwrite is False.'}
+
+# Constants (replace with actual values)
+BASE_URL = "https://example.com/api/v1/"
+AUTH_HEADER = {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+    "Authorization": "Basic base64credentials"
 }
 
-# Create the role
-role_url = f"{config['base_url']}/roles"
-role_payload = {
-    "name": config["role_name"],
-    "description": "This is a role created by API"
-}
-role_response = requests.post(role_url, json=role_payload, headers=config["auth_header"], verify=False)
-role_id = role_response.json()["id"]
+# Load the JSON configuration
+with open('config.json', 'r') as config_file:
+    config_data = json.load(config_file)
 
-# Create the column mask
-column_mask_url = f"{config['base_url']}/expressions/columnMask"
-column_mask_payload = {
-    "name": config["column_mask_name"],
-    "description": "This is will replace vowels with stars",
-    "expression": "regexp_replace(\"@column\",'[aeiou]','*')"
-}
-column_mask_response = requests.post(column_mask_url, json=column_mask_payload, headers=config["auth_header"], verify=False)
-column_mask_id = column_mask_response.json()["id"]
+# Create Mask Expressions
+for mask in config_data['MaskExpressions']:
+    create_mask_expression(mask, BASE_URL, AUTH_HEADER, overwrite=True)
 
-# Create a column mask for the role
-role_column_mask_url = f"{config['base_url']}/roles/{role_id}/columnMasks"
-role_column_mask_payload = {
-    "expressionId": column_mask_id,
-    "entity": {
-        "category": "TABLES",
-        "allEntities": False,
-        "catalog": config["catalog"],
-        "schema": config["schema"],
-        "table": config["table"],
-        "columns": config["columns"]
-    }
-}
-requests.post(role_column_mask_url, json=role_column_mask_payload, headers=config["auth_header"], verify=False)
+# Create Roles
+for role in config_data['Roles']:
+    create_role(role, BASE_URL, AUTH_HEADER, overwrite=True)
 
-# Attach the role to the user
-user_role_url = f"{config['base_url']}/subjects/users/admin/assignments"
-user_role_payload = {
-    "roleId": role_id,
-    "roleAdmin": False
-}
-requests.post(user_role_url, json=user_role_payload, headers=config["auth_header"], verify=False)
+# Map Roles to Mask Expressions
+for mapping in config_data['RoleMappings']:
+    map_role_to_mask(mapping, BASE_URL, AUTH_HEADER, overwrite=True)
