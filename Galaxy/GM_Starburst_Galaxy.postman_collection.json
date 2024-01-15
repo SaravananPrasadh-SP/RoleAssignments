@@ -1,0 +1,700 @@
+{
+	"info": {
+		"_postman_id": "7cf921e8-b8ef-4c7c-a143-378f24afb9ef",
+		"name": "Starburst Galaxy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19417501"
+	},
+	"item": [
+		{
+			"name": "Access Token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic UlVMY213elVEd2NKSnczOTp3UjNJNUEzZk1EajhZVEZrZEVWZ2w0YjM3VHk1cVdGNg==",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{host}}/oauth/v2/token?grant_type=client_credentials",
+					"protocol": "https",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"oauth",
+						"v2",
+						"token"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Clusters",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJlaFdIVWRxUTdBSGRhWUMzM1ZoeTE5eGVJcnNydDNVV1RKZnBSTmRpZnBPTG1aMXEiLCJpc3MiOiJodHRwczovL29hdXRoLmdhbGF4eS5zdGFyYnVyc3QuaW8iLCJhdWQiOiJSVUxjbXd6VUR3Y0pKdzM5Iiwic3ViIjoidS05NzA4NzA0ODk1IiwiaWF0IjoxNzAwNzUxNDM2LCJleHAiOjE3MDA3NTIwMzYsInZlciI6IjEiLCJhaWQiOiJhLTg5MTAxODU2IiwicmlkIjoici0zMzU5NjQ0OTYzIiwiZXhpZCI6ImV4YS01NDM5Njc2OTk2IiwiZWF0IjoiUFVCTElDX0FQSSJ9.67mTHj_F5fHuOJFOCOyCvxeDBziW6RW4effV4kVfwR3XBiFQMZvHYpDXtv4uAGbFS45signLW6lpXWMwzgLrHw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{host}}/public/api/v1/cluster",
+					"protocol": "https",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"public",
+						"api",
+						"v1",
+						"cluster"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Cluster",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJlaFdIVWRxUTdBSGRhWUMzM1ZoeTE5eGVJcnNydDNVV1RKZnBSTmRpZnBPTG1aMXEiLCJpc3MiOiJodHRwczovL29hdXRoLmdhbGF4eS5zdGFyYnVyc3QuaW8iLCJhdWQiOiJSVUxjbXd6VUR3Y0pKdzM5Iiwic3ViIjoidS05NzA4NzA0ODk1IiwiaWF0IjoxNzAwNzUxNDM2LCJleHAiOjE3MDA3NTIwMzYsInZlciI6IjEiLCJhaWQiOiJhLTg5MTAxODU2IiwicmlkIjoici0zMzU5NjQ0OTYzIiwiZXhpZCI6ImV4YS01NDM5Njc2OTk2IiwiZWF0IjoiUFVCTElDX0FQSSJ9.67mTHj_F5fHuOJFOCOyCvxeDBziW6RW4effV4kVfwR3XBiFQMZvHYpDXtv4uAGbFS45signLW6lpXWMwzgLrHw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic ejRVUmtEaDBkbmxSaGNiODp2VUNsM3BpUldpT3MyWmxxa3FMUkV0eTgwOFJiRnJkQw==",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "grant_type",
+						"value": "client_credentials",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://gmartin.galaxy.starburst.io/public/api/v1/cluster/w-4735797902",
+					"protocol": "https",
+					"host": [
+						"gmartin",
+						"galaxy",
+						"starburst",
+						"io"
+					],
+					"path": [
+						"public",
+						"api",
+						"v1",
+						"cluster",
+						"w-4735797902"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patch Cluster",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJoekJMSTQ5REREbWFDTlV4SWNjd1hDdzhHLVg1aDhMTmctWTRHUGRMMS1NVm5CZnciLCJpc3MiOiJodHRwczovL29hdXRoLmdhbGF4eS5zdGFyYnVyc3QuaW8iLCJhdWQiOiJSVUxjbXd6VUR3Y0pKdzM5Iiwic3ViIjoidS05NzA4NzA0ODk1IiwiaWF0IjoxNjk2Mjc4NTIxLCJleHAiOjE2OTYyNzkxMjEsInZlciI6IjEiLCJhaWQiOiJhLTg5MTAxODU2IiwicmlkIjoici0zMzU5NjQ0OTYzIiwiZXhpZCI6ImV4YS01NDM5Njc2OTk2IiwiZWF0IjoiUFVCTElDX0FQSSJ9.SfIcpzpcLdZakbHIHgeNJiMmwpmiW1H1TINm_9Dh3GU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic ejRVUmtEaDBkbmxSaGNiODp2VUNsM3BpUldpT3MyWmxxa3FMUkV0eTgwOFJiRnJkQw==",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "grant_type",
+						"value": "client_credentials",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "enabled",
+						"value": "Y",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"minWorkers\": 1,\n\"maxWorkers\": 2,    \n\"enabled\": true\n}"
+				},
+				"url": {
+					"raw": "https://{{host}}/public/api/v1/cluster/w-1841103203",
+					"protocol": "https",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"public",
+						"api",
+						"v1",
+						"cluster",
+						"w-1841103203"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"disabled": true
+						},
+						{
+							"key": "enabled",
+							"value": "y",
+							"disabled": true
+						},
+						{
+							"key": "minWorkers",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Catalog",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJJTmVrMkFPdnRKUTBfV2JRM01VME5zQmd5a2oyV3liYkJfalBVb0JSS0Y0eHpFNXQiLCJpc3MiOiJodHRwczovL29hdXRoLmdhbGF4eS5zdGFyYnVyc3QuaW8iLCJhdWQiOiJSVUxjbXd6VUR3Y0pKdzM5Iiwic3ViIjoidS05NzA4NzA0ODk1IiwiaWF0IjoxNzA0NjQxMDQ3LCJleHAiOjE3MDQ2NDE2NDcsInZlciI6IjEiLCJhaWQiOiJhLTg5MTAxODU2IiwicmlkIjoici0zMzU5NjQ0OTYzIiwiZXhpZCI6ImV4YS01NDM5Njc2OTk2IiwiZWF0IjoiUFVCTElDX0FQSSJ9.88Y5TDcQYvP4biUBPozAORcF6ZuWPM-gJQka0lYxJomczkRDpU5eLnyifYvhE45Oxr7vLaoGIedS3Rf2pfde_Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic ejRVUmtEaDBkbmxSaGNiODp2VUNsM3BpUldpT3MyWmxxa3FMUkV0eTgwOFJiRnJkQw==",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "grant_type",
+						"value": "client_credentials",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{host}}/public/api/v1/catalog",
+					"protocol": "https",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"public",
+						"api",
+						"v1",
+						"catalog"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Tags",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJJTmVrMkFPdnRKUTBfV2JRM01VME5zQmd5a2oyV3liYkJfalBVb0JSS0Y0eHpFNXQiLCJpc3MiOiJodHRwczovL29hdXRoLmdhbGF4eS5zdGFyYnVyc3QuaW8iLCJhdWQiOiJSVUxjbXd6VUR3Y0pKdzM5Iiwic3ViIjoidS05NzA4NzA0ODk1IiwiaWF0IjoxNzA0NjQxMDQ3LCJleHAiOjE3MDQ2NDE2NDcsInZlciI6IjEiLCJhaWQiOiJhLTg5MTAxODU2IiwicmlkIjoici0zMzU5NjQ0OTYzIiwiZXhpZCI6ImV4YS01NDM5Njc2OTk2IiwiZWF0IjoiUFVCTElDX0FQSSJ9.88Y5TDcQYvP4biUBPozAORcF6ZuWPM-gJQka0lYxJomczkRDpU5eLnyifYvhE45Oxr7vLaoGIedS3Rf2pfde_Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://gmartin.galaxy.starburst.io/public/api/v1/tag",
+					"protocol": "https",
+					"host": [
+						"gmartin",
+						"galaxy",
+						"starburst",
+						"io"
+					],
+					"path": [
+						"public",
+						"api",
+						"v1",
+						"tag"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Policy",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJMLTh1V3JLdEQ3Q3BqN3NTWkhURW9HTU0yUnoyTG5WZnRaTEFydWRmblNLYllWckoiLCJpc3MiOiJodHRwczovL29hdXRoLmdhbGF4eS5zdGFyYnVyc3QuaW8iLCJhdWQiOiJSVUxjbXd6VUR3Y0pKdzM5Iiwic3ViIjoidS05NzA4NzA0ODk1IiwiaWF0IjoxNzA0NjM4OTExLCJleHAiOjE3MDQ2Mzk1MTEsInZlciI6IjEiLCJhaWQiOiJhLTg5MTAxODU2IiwicmlkIjoici0zMzU5NjQ0OTYzIiwiZXhpZCI6ImV4YS01NDM5Njc2OTk2IiwiZWF0IjoiUFVCTElDX0FQSSJ9.ORk4ylrRuMsM_ePss9jLxGcKHQoCYmriwhu0JN3k8Rd-53ivqGsRXTKlCQTuzMBXEGQ-fYFKd4aqIb8INr9-Yw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://gmartin.galaxy.starburst.io/public/api/v1/policy",
+					"protocol": "https",
+					"host": [
+						"gmartin",
+						"galaxy",
+						"starburst",
+						"io"
+					],
+					"path": [
+						"public",
+						"api",
+						"v1",
+						"policy"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Roles",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJJTmVrMkFPdnRKUTBfV2JRM01VME5zQmd5a2oyV3liYkJfalBVb0JSS0Y0eHpFNXQiLCJpc3MiOiJodHRwczovL29hdXRoLmdhbGF4eS5zdGFyYnVyc3QuaW8iLCJhdWQiOiJSVUxjbXd6VUR3Y0pKdzM5Iiwic3ViIjoidS05NzA4NzA0ODk1IiwiaWF0IjoxNzA0NjQxMDQ3LCJleHAiOjE3MDQ2NDE2NDcsInZlciI6IjEiLCJhaWQiOiJhLTg5MTAxODU2IiwicmlkIjoici0zMzU5NjQ0OTYzIiwiZXhpZCI6ImV4YS01NDM5Njc2OTk2IiwiZWF0IjoiUFVCTElDX0FQSSJ9.88Y5TDcQYvP4biUBPozAORcF6ZuWPM-gJQka0lYxJomczkRDpU5eLnyifYvhE45Oxr7vLaoGIedS3Rf2pfde_Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://gmartin.galaxy.starburst.io/public/api/v1/role",
+					"protocol": "https",
+					"host": [
+						"gmartin",
+						"galaxy",
+						"starburst",
+						"io"
+					],
+					"path": [
+						"public",
+						"api",
+						"v1",
+						"role"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Masks",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJod0VhXzhPV2ZZNExsbUNaVWJWLXZoUXVjYVJiNzlTVU9jdnZKSG4zZVk5VTliRnoiLCJpc3MiOiJodHRwczovL29hdXRoLmdhbGF4eS5zdGFyYnVyc3QuaW8iLCJhdWQiOiJSVUxjbXd6VUR3Y0pKdzM5Iiwic3ViIjoidS05NzA4NzA0ODk1IiwiaWF0IjoxNzA0NjQwMzU4LCJleHAiOjE3MDQ2NDA5NTgsInZlciI6IjEiLCJhaWQiOiJhLTg5MTAxODU2IiwicmlkIjoici0zMzU5NjQ0OTYzIiwiZXhpZCI6ImV4YS01NDM5Njc2OTk2IiwiZWF0IjoiUFVCTElDX0FQSSJ9.mwxPTOB9C_xT1GXoPpmtFcpjKheH0CpVWPtTaKOcAQmokYww4wNZEeAMaNMsDnmfLOlDACj18HC3EqhVeTt3YA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://gmartin.galaxy.starburst.io/public/api/v1/columnMask",
+					"protocol": "https",
+					"host": [
+						"gmartin",
+						"galaxy",
+						"starburst",
+						"io"
+					],
+					"path": [
+						"public",
+						"api",
+						"v1",
+						"columnMask"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Tag",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJZMjJRLXBWcGdZZ015Q3oxdTF1VFpyV2JNWUt6eHAxdy1vSVNHYVpxZ1pTeXIzcVIiLCJpc3MiOiJodHRwczovL29hdXRoLmdhbGF4eS5zdGFyYnVyc3QuaW8iLCJhdWQiOiJSVUxjbXd6VUR3Y0pKdzM5Iiwic3ViIjoidS05NzA4NzA0ODk1IiwiaWF0IjoxNzAwODI4NjEwLCJleHAiOjE3MDA4MjkyMTAsInZlciI6IjEiLCJhaWQiOiJhLTg5MTAxODU2IiwicmlkIjoici0zMzU5NjQ0OTYzIiwiZXhpZCI6ImV4YS01NDM5Njc2OTk2IiwiZWF0IjoiUFVCTElDX0FQSSJ9.gb0VoBJI2p3-0Jb9NctF3uc3f3mkcUjOuqGs6TWzcdNCgumQjVfQspJVspoW2Rx_PSKv4E-UoosYPgc6Ol0nvg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"indigo\",\n//  \"color\": \"#4CAF5C\", //\n//  \"color\": \"#000000\",\n//  \"color\": \"#FF00FF\",\n  \"color\": \"#4B0082\",\n  \"description\": \"PII Example using the API\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://gmartin.galaxy.starburst.io/public/api/v1/tag",
+					"protocol": "https",
+					"host": [
+						"gmartin",
+						"galaxy",
+						"starburst",
+						"io"
+					],
+					"path": [
+						"public",
+						"api",
+						"v1",
+						"tag"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Policy",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJod0VhXzhPV2ZZNExsbUNaVWJWLXZoUXVjYVJiNzlTVU9jdnZKSG4zZVk5VTliRnoiLCJpc3MiOiJodHRwczovL29hdXRoLmdhbGF4eS5zdGFyYnVyc3QuaW8iLCJhdWQiOiJSVUxjbXd6VUR3Y0pKdzM5Iiwic3ViIjoidS05NzA4NzA0ODk1IiwiaWF0IjoxNzA0NjQwMzU4LCJleHAiOjE3MDQ2NDA5NTgsInZlciI6IjEiLCJhaWQiOiJhLTg5MTAxODU2IiwicmlkIjoici0zMzU5NjQ0OTYzIiwiZXhpZCI6ImV4YS01NDM5Njc2OTk2IiwiZWF0IjoiUFVCTElDX0FQSSJ9.mwxPTOB9C_xT1GXoPpmtFcpjKheH0CpVWPtTaKOcAQmokYww4wNZEeAMaNMsDnmfLOlDACj18HC3EqhVeTt3YA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"roleId\": \"r-8240071370\",\n  \"name\": \"gmpolicyapi\",\n  \"predicate\": \"has_tag(pii)\",\n  \"description\": \"Policy via API\",\n  \"expiration\": \"2025-08-24T14:15:22Z\",\n  \"scopes\": [\n    {\n      \"entityId\": \"c-2914728534\",\n      \"entityKind\": \"Column\",\n      \"schemaName\": \"land\",\n      \"tableName\": \"salesnontxn1\",\n      \"columnName\": \"customerid\",\n      \"rowFilters\": [],\n      \"columnMask\": \"cm-4726795894\"\n    }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://gmartin.galaxy.starburst.io/public/api/v1/policy",
+					"protocol": "https",
+					"host": [
+						"gmartin",
+						"galaxy",
+						"starburst",
+						"io"
+					],
+					"path": [
+						"public",
+						"api",
+						"v1",
+						"policy"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Tag_Table",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJuWkNmeFIyTW5wd0ZzYWFPdS1UYlk5clFjUlZQM1h1cVE3QlplWVRlb1BfQ3lhY1oiLCJpc3MiOiJodHRwczovL29hdXRoLmdhbGF4eS5zdGFyYnVyc3QuaW8iLCJhdWQiOiJSVUxjbXd6VUR3Y0pKdzM5Iiwic3ViIjoidS05NzA4NzA0ODk1IiwiaWF0IjoxNzAwNzU2NjE3LCJleHAiOjE3MDA3NTcyMTcsInZlciI6IjEiLCJhaWQiOiJhLTg5MTAxODU2IiwicmlkIjoici0zMzU5NjQ0OTYzIiwiZXhpZCI6ImV4YS01NDM5Njc2OTk2IiwiZWF0IjoiUFVCTElDX0FQSSJ9.U70orUwoHu7ielN-_UZb7EtQZWGkXqYkejYi3xs9M4ZWDq4t0ndRaS9wsEUDD65kgp7qUmr34PrQKh9FyN6XtA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "https://{{host}}/public/api/v1/tag/{{tagId}}/catalog/{{catalogId}}/schema/{{schemaId}}/table/{{tableId}}",
+					"protocol": "https",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"public",
+						"api",
+						"v1",
+						"tag",
+						"{{tagId}}",
+						"catalog",
+						"{{catalogId}}",
+						"schema",
+						"{{schemaId}}",
+						"table",
+						"{{tableId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List_Schema",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJjUVJZZnJNdmVHRXhFbDZVR09VSHY2akZFcGZ0VVVGMG1zSDF3YTdaOUVaZjFKZWoiLCJpc3MiOiJodHRwczovL29hdXRoLmdhbGF4eS5zdGFyYnVyc3QuaW8iLCJhdWQiOiJSVUxjbXd6VUR3Y0pKdzM5Iiwic3ViIjoidS05NzA4NzA0ODk1IiwiaWF0IjoxNzA0NTY3NDU5LCJleHAiOjE3MDQ1NjgwNTksInZlciI6IjEiLCJhaWQiOiJhLTg5MTAxODU2IiwicmlkIjoici0zMzU5NjQ0OTYzIiwiZXhpZCI6ImV4YS01NDM5Njc2OTk2IiwiZWF0IjoiUFVCTElDX0FQSSJ9.CSz6b0lDEkxmuuRuLrpxDZuo4TUzSZ-qTCuYKzNFZnQInqoYS4JAP0UY9Zngl3bWUiJNpyWHrwG_rDQ6i5Ko1Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{host}}/public/api/v1/catalog/{{catalogId}}/schema",
+					"protocol": "https",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"public",
+						"api",
+						"v1",
+						"catalog",
+						"{{catalogId}}",
+						"schema"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get_Metadata",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJlaFdIVWRxUTdBSGRhWUMzM1ZoeTE5eGVJcnNydDNVV1RKZnBSTmRpZnBPTG1aMXEiLCJpc3MiOiJodHRwczovL29hdXRoLmdhbGF4eS5zdGFyYnVyc3QuaW8iLCJhdWQiOiJSVUxjbXd6VUR3Y0pKdzM5Iiwic3ViIjoidS05NzA4NzA0ODk1IiwiaWF0IjoxNzAwNzUxNDM2LCJleHAiOjE3MDA3NTIwMzYsInZlciI6IjEiLCJhaWQiOiJhLTg5MTAxODU2IiwicmlkIjoici0zMzU5NjQ0OTYzIiwiZXhpZCI6ImV4YS01NDM5Njc2OTk2IiwiZWF0IjoiUFVCTElDX0FQSSJ9.67mTHj_F5fHuOJFOCOyCvxeDBziW6RW4effV4kVfwR3XBiFQMZvHYpDXtv4uAGbFS45signLW6lpXWMwzgLrHw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{host}}/public/api/v1/catalog/{{catalogId}}/catalogMetadata",
+					"protocol": "https",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"public",
+						"api",
+						"v1",
+						"catalog",
+						"{{catalogId}}",
+						"catalogMetadata"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get_Table",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJWZUVmTy1jRW9yNVItUzY3UzVza1pFOElkTEl5aGJteENkYWsxODJPSlF5VXk2cmwiLCJpc3MiOiJodHRwczovL29hdXRoLmdhbGF4eS5zdGFyYnVyc3QuaW8iLCJhdWQiOiJSVUxjbXd6VUR3Y0pKdzM5Iiwic3ViIjoidS05NzA4NzA0ODk1IiwiaWF0IjoxNzA0NTYyNzkzLCJleHAiOjE3MDQ1NjMzOTMsInZlciI6IjEiLCJhaWQiOiJhLTg5MTAxODU2IiwicmlkIjoici0zMzU5NjQ0OTYzIiwiZXhpZCI6ImV4YS01NDM5Njc2OTk2IiwiZWF0IjoiUFVCTElDX0FQSSJ9._cV_2u7AJnRhL3fGFPzzMdID4Bx9NBKjtrXHdapMtM1miYKXnbHs-ZpChQjDnnUDznzLZGrg1FLrtEPQLsjsxQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{host}}/public/api/v1/catalog/{{catalogId}}/schema/{{schemaId}}/table",
+					"protocol": "https",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"public",
+						"api",
+						"v1",
+						"catalog",
+						"{{catalogId}}",
+						"schema",
+						"{{schemaId}}",
+						"table"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get_Column",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJWZUVmTy1jRW9yNVItUzY3UzVza1pFOElkTEl5aGJteENkYWsxODJPSlF5VXk2cmwiLCJpc3MiOiJodHRwczovL29hdXRoLmdhbGF4eS5zdGFyYnVyc3QuaW8iLCJhdWQiOiJSVUxjbXd6VUR3Y0pKdzM5Iiwic3ViIjoidS05NzA4NzA0ODk1IiwiaWF0IjoxNzA0NTYyNzkzLCJleHAiOjE3MDQ1NjMzOTMsInZlciI6IjEiLCJhaWQiOiJhLTg5MTAxODU2IiwicmlkIjoici0zMzU5NjQ0OTYzIiwiZXhpZCI6ImV4YS01NDM5Njc2OTk2IiwiZWF0IjoiUFVCTElDX0FQSSJ9._cV_2u7AJnRhL3fGFPzzMdID4Bx9NBKjtrXHdapMtM1miYKXnbHs-ZpChQjDnnUDznzLZGrg1FLrtEPQLsjsxQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{host}}/public/api/v1/catalog/{{catalogId}}/schema/{{schemaId}}/table/{{tableId}}tableId}/column",
+					"protocol": "https",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"public",
+						"api",
+						"v1",
+						"catalog",
+						"{{catalogId}}",
+						"schema",
+						"{{schemaId}}",
+						"table",
+						"{{tableId}}tableId}",
+						"column"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
